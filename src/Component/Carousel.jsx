@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-
+import styled from 'styled-components';
+const ImgDiv=styled.div`
+width: 400px;
+height: 400px;
+margin: auto;
+`
 const Carousel = () => {
     const images = [
         "https://thumbs.dreamstime.com/z/branch-blue-fir-tree-branch-blue-fir-tree-snow-winter-day-background-toned-imgage-selective-focus-98956733.jpg",
@@ -37,13 +42,15 @@ const Carousel = () => {
     
     return (
         <div className="App">
-      <div className="imgDiv">
+      {/* <div className="imgDiv"> */}
+        <ImgDiv>
         <img
           src={images[index]}
           alt="loading"
           style={{ width: "400px", margin: "auto" }}
         />
-      </div>
+        </ImgDiv>
+      {/* </div> */}
       <div className="Container">
         <button className={index===0 && "black"} onClick={()=>setIndex(0)}></button>
         <button className={index===1 && "black"} onClick={()=>setIndex(1)}></button>
